@@ -28,6 +28,8 @@ if uri.startswith("postgres://"):
     uri = uri.replace("postgres://", "postgresql://")
 db = SQL(uri)
 
+pgloader --no-ssl-cert-verification finance.db postgres://slalhnicgowxcm:1cfecc5f529ad6bc67a8cfc8b4d98ee6b8b58590cce25253d8d194689d0298b5@ec2-23-23-182-238.compute-1.amazonaws.com:5432/dcql85mfngv3m0?sslmode=require
+
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
